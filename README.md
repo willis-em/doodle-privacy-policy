@@ -1,1 +1,1 @@
-# doodle-privacy-policy
+# Scribu-Gaki-privacy-policy
