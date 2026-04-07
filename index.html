@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scribu Gaki – Support & Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #fffbf4;
+      --soft-yellow: #fef3c7;
+      --coral: #ff6b6b;
+      --teal: #4ecdc4;
+      --navy: #2d3561;
+      --ink: #1a1a2e;
+      --muted: #6b7280;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* Scribble background pattern */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(78,205,196,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(255,107,107,0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(254,243,199,0.4) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    .hero {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .app-icon {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(135deg, var(--teal) 0%, #44b89e 50%, var(--coral) 100%);
+      border-radius: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px rgba(78,205,196,0.3), 0 2px 8px rgba(0,0,0,0.1);
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 2.8rem;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .pill {
+      display: inline-block;
+      background: var(--soft-yellow);
+      color: #92400e;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-top: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      transition: box-shadow 0.2s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .icon-teal { background: rgba(78,205,196,0.15); }
+    .icon-coral { background: rgba(255,107,107,0.15); }
+    .icon-yellow { background: rgba(254,211,77,0.2); }
+    .icon-navy { background: rgba(45,53,97,0.08); }
+
+    .card h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.3rem;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+    }
+
+    p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: #374151;
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* Privacy rows */
+    .privacy-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .privacy-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .privacy-row:first-child { padding-top: 0; }
+
+    .check {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #dcfce7;
+      color: #16a34a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .cross {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+
+    .privacy-row-text strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .privacy-row-text span {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* Contact */
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--soft-yellow);
+      color: #92400e;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 10px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+
+    .contact-email:hover { background: #fde68a; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 48px;
+      font-size: 0.82rem;
+      color: #9ca3af;
+      font-weight: 600;
+    }
+
+    footer span { color: var(--coral); }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="hero">
+      <div class="app-icon">🎨</div>
+      <h1>Scribu Gaki</h1>
+      <p class="tagline">A free drawing app for little artists</p>
+      <span class="pill">Made for Kids · Ages 5 and under</span>
+    </div>
+
+    <!-- About -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-teal">✏️</div>
+        <h2>About the App</h2>
+      </div>
+      <p>Scribu Gaki is a simple, free, ad-free drawing app designed for very young children. Kids can draw freely with their fingers using a variety of colours and brush sizes.</p>
+      <p>There are no accounts, no logins, no in-app purchases, and no internet connection required. Everything stays on your device.</p>
+    </div>
+
+    <!-- Privacy -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-coral">🔒</div>
+        <h2>Privacy Policy</h2>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check cross">✕</div>
+        <div class="privacy-row-text">
+          <strong>No data collection</strong>
+          <span>We do not collect any personal information from users.</span>
+        </div>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check cross">✕</div>
+        <div class="privacy-row-text">
+          <strong>No analytics or tracking</strong>
+          <span>The app contains no third-party analytics SDKs or tracking tools.</span>
+        </div>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check cross">✕</div>
+        <div class="privacy-row-text">
+          <strong>No advertising</strong>
+          <span>There are no ads of any kind — not now, not ever.</span>
+        </div>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check cross">✕</div>
+        <div class="privacy-row-text">
+          <strong>No data sharing</strong>
+          <span>We do not share any information with third parties.</span>
+        </div>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check">✓</div>
+        <div class="privacy-row-text">
+          <strong>Fully offline</strong>
+          <span>All drawings are saved locally on your device and never transmitted.</span>
+        </div>
+      </div>
+
+      <div class="privacy-row">
+        <div class="check">✓</div>
+        <div class="privacy-row-text">
+          <strong>COPPA compliant</strong>
+          <span>Designed to comply with children's privacy laws including COPPA.</span>
+        </div>
+      </div>
+
+      <p style="margin-top: 20px; font-size: 0.85rem; color: var(--muted);">Last updated: April 2026</p>
+    </div>
+
+    <!-- Support -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-yellow">💬</div>
+        <h2>Support</h2>
+      </div>
+      <p>Having trouble with the app? Got a suggestion? We'd love to hear from you.</p>
+      <a class="contact-email" href="mailto:support@scribugaki.app">
+        ✉️ Contact Support
+      </a>
+    </div>
+
+    <!-- Developer -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon icon-navy">👨‍💻</div>
+        <h2>Developer</h2>
+      </div>
+      <p>Scribu Gaki is an independently developed app, built with love for young children and their parents.</p>
+    </div>
+
+    <footer>
+      <p>© 2026 Scribu Gaki · Made with <span>♥</span> for little artists</p>
+    </footer>
+
+  </div>
+</body>
+</html>
